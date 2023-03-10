@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+    <meta title="MultiCards" version="1.0.0" />
+    <app main="Main" file="bin/MultiCards" />
+    <source path="source" />
+    <haxelib name="openfl" />
+    <haxelib name="actuate" />
+    <assets path="assets" rename="assets" />
+</project>
