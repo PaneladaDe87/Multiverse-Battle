@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<screen>
+  <text text="Selecione suas cartas" x="100" y="20" />
+  <card x="50" y="50" cardId="1" />
+  <card x="150" y="50" cardId="2" />
+  <card x="250" y="50" cardId="3" />
+  <card x="50" y="150" cardId="4" />
+  <card x="150" y="150" cardId="5" />
+  <card x="250" y="150" cardId="6" />
+</screen>
