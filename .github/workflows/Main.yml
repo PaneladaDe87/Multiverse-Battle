@@ -1,0 +1,22 @@
+name: Build APK
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Install Lime
+      run: haxelib install lime
+    - name: Build APK
+      run: lime build android -release
+    - name: Upload APK
+      uses: actions/upload-artifact@v2
+      with:
+        name: mygame.apk
+        path: export/android/release/bin/MyGame-release.apk
