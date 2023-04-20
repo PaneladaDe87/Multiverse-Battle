@@ -1,0 +1,29 @@
+name: Build APK
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Install Haxe and Haxelib
+      run: |
+        sudo apt-get update
+        sudo apt-get install haxe
+        sudo apt-get install neko
+        sudo haxelib setup
+        haxelib install lime
+      shell: bash
+    - name: Build APK
+      run: lime build android -release
+      working-directory: /github/workspace
+    - name: Upload APK
+      uses: actions/upload-artifact@v2
+      with:
+        name: Debug.apk
+        path: export/android/release/bin/MyGame-release.apk
